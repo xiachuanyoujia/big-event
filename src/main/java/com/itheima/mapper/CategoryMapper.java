@@ -17,4 +17,8 @@ public interface CategoryMapper {
     //查询所有
     @Select("select * from big_event.category where create_user=#{userId}")
     List<Category> list(Integer userId);
+
+    //根据id查询详细分类
+    @Select("select * from big_event.category where id=#{id}")
+    Category findById(Integer id);
 }
