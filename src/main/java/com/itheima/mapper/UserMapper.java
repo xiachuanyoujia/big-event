@@ -23,4 +23,7 @@ public interface UserMapper {
 
     @Update("update big_event.user set user_pic=#{avatarUrl},update_time=now() where id=#{id}")
     void updateAvatar(String avatarUrl, Integer id);
+
+    @Update("update big_event.user set password=#{md5String},update_time=now() where id=#{id}")
+    void updatePwd(String md5String, Integer id);
 }
