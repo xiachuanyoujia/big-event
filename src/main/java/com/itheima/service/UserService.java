@@ -22,4 +22,7 @@ public interface UserService {
      * @param user
      */
     void update(User user);
+
+    //更新头像
+    void updateAvatar(String avatarUrl);
 }
