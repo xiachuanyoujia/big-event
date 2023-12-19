@@ -4,6 +4,7 @@ import com.itheima.pojo.Category;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -21,4 +22,8 @@ public interface CategoryMapper {
     //根据id查询详细分类
     @Select("select * from big_event.category where id=#{id}")
     Category findById(Integer id);
+
+    //更新
+    @Update("update big_event.category set category_name=#{categoryName},category_alias=#{categoryAlias},update_time=#{updateTime} where id=#{id}")
+    void update(Category category);
 }
