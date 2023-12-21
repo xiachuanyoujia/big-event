@@ -3,6 +3,7 @@ package com.itheima.controller;
 import com.itheima.pojo.Category;
 import com.itheima.pojo.Result;
 import com.itheima.service.CategoryService;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +37,12 @@ public class CategoryController {
     @PutMapping
     public Result update(@RequestBody @Validated(Category.Update.class) Category category) {
         categoryService.update(category);
+        return Result.success();
+    }
+
+    @DeleteMapping
+    public Result<String> delete(@NotNull final Integer id){
+        categoryService.delete(id);
         return Result.success();
     }
 }
