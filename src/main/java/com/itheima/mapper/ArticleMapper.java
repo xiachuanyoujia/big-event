@@ -3,6 +3,7 @@ package com.itheima.mapper;
 import com.itheima.pojo.Article;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -15,4 +16,7 @@ public interface ArticleMapper {
 
 
     List<Article> list(Integer userId, Integer categoryId, String state);
+
+    @Select("select * from big_event.article where id=#{id}")
+    Article detail(Integer id);
 }

@@ -51,4 +51,9 @@ public class ArticleServiceImpl implements ArticleService {
         pb.setItems(p.getResult());
         return pb;
     }
+
+    @Override
+    public Article detail(Integer id) {
+        return articleMapper.detail(id);
+    }
 }

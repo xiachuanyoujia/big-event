@@ -4,6 +4,7 @@ import com.itheima.pojo.Article;
 import com.itheima.pojo.PageBean;
 import com.itheima.pojo.Result;
 import com.itheima.service.ArticleService;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +31,11 @@ public class ArticleController {
     ) {
         PageBean<Article> pb = articleService.list(pageNum, pageSize, categoryId, state);
         return Result.success(pb);
+    }
+
+    @GetMapping("/detail")
+    public Result<Article> detail(@NotNull Integer id) {
+        Article detail = articleService.detail(id);
+        return Result.success(detail);
     }
 }
