@@ -44,4 +44,10 @@ public class ArticleController {
         articleService.update(article);
         return Result.success();
     }
+
+    @DeleteMapping
+    public Result del(@NotNull Integer id) {
+        articleService.del(id);
+        return Result.success();
+    }
 }
