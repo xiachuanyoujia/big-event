@@ -4,7 +4,12 @@ spring:
     url: jdbc:mysql://localhost:3306/big_event
     username: root
     password: root
-
+  data:
+    redis:
+      host: 8.138.107.7
+      port: 6379
+      password: Qq1243357202
+      database: 0
 mybatis:
   configuration:
     map-underscore-to-camel-case: true  #开启驼峰命名和下划线命名的自动转换
