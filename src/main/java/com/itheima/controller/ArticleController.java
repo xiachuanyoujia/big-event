@@ -38,4 +38,10 @@ public class ArticleController {
         Article detail = articleService.detail(id);
         return Result.success(detail);
     }
+
+    @PutMapping
+    public Result update(@RequestBody @Validated Article article) {
+        articleService.update(article);
+        return Result.success();
+    }
 }
